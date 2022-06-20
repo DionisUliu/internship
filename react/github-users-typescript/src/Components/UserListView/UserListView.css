@@ -1,0 +1,20 @@
+.load-more-button {
+  background: #18bc51;
+  border-color: #54ff91;
+  position: relative;
+  left: 50%;
+  bottom: 30px;
+  top: 30px;
+  transform: translate(-50%, -50%);
+  margin-bottom: 50px;
+}
+
+.load-more-button:hover {
+  background: #54ff91;
+  border-color: #18bc51;
+}
+
+.load-more-button:focus {
+  background: #18bc51;
+  border-color: #54ff91;
+}

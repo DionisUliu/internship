@@ -1,0 +1,52 @@
+.card-wreapper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  margin-top: 100px;
+}
+
+.card-style {
+  width: 18rem;
+  border-width: 5px;
+  border-color: #54ff91;
+  border-radius: 40px;
+  margin: 20px;
+  background-color: #2e2d32;
+  color: white;
+}
+
+.image-avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  box-shadow: #18bc5193 0px 0px 0px 2px;
+  border-radius: 150px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-color: red;
+  margin-top: 10px;
+}
+
+.title-style {
+  align-items: center;
+  justify-items: center;
+}
+
+.show-details-button {
+  border-color: #18bc51;
+  color: #18bc51;
+}
+
+.show-details-button:hover {
+  border-color: #18bc51;
+  color: white;
+  background-color: #18bc51;
+}
+
+.show-details-button:focus {
+  border-color: #18bc51;
+}
