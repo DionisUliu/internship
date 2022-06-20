@@ -1,0 +1,31 @@
+{
+  "weather": [
+    {
+      "condition": "Sunny",
+      "currentTemperature": 30,
+      "highTemperature": 32,
+      "lowTemperature": 27,
+      "windSpeed": 3,
+      "description": "Today will be a very hot day.",
+      "image": "./sun.png"
+    },
+    {
+      "condition": "Rainy",
+      "currentTemperature": 18,
+      "highTemperature": 20,
+      "lowTemperature": 15,
+      "windSpeed": 7,
+      "description": "Today will be a very wet day.",
+      "image": "./rain.png"
+    },
+    {
+      "condition": "Snowy",
+      "currentTemperature": -4,
+      "highTemperature": -1,
+      "lowTemperature": -6,
+      "windSpeed": 14,
+      "description": "Today will be a very cold day.",
+      "image": "./snow.png"
+    }
+  ]
+}

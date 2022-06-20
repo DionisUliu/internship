@@ -1,0 +1,45 @@
+.container {
+  height: 0 auto;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  border-radius: 20px;
+}
+
+.icon {
+  width: 40%;
+  margin-left: 85px;
+  margin-top: 30px;
+  filter: drop-shadow(5px 5px 5px rgba(63, 61, 56, 0.384));
+}
+
+.condition {
+  margin-left: 110px;
+}
+
+.temperature {
+  margin-left: 105px;
+}
+
+h4.highest {
+  position: relative;
+  left: 45px;
+  top: 20px;
+}
+
+h4.lowest {
+  position: relative;
+  left: 45px;
+  top: 40px;
+}
+
+h4.wind {
+  position: relative;
+  left: 45px;
+  top: 60px;
+}
+
+h5.description {
+  position: relative;
+  left: 45px;
+  top: 85px;
+}

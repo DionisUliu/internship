@@ -1,0 +1,17 @@
+.box {
+  position: relative;
+  display: flex;
+  width: 700px;
+  height: 400px;
+  margin: 150px auto;
+  background-color: #ffffff;
+  border-radius: 9px;
+  padding: 25px;
+  padding-right: 30px;
+  box-shadow: 0px 31px 35px -26px #080c21;
+}
+
+.box > div {
+  flex: 1 1 auto;
+  margin: 20px;
+}

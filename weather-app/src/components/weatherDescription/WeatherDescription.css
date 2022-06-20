@@ -1,0 +1,11 @@
+.containe {
+  height: 0 auto;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+p {
+  color: red;
+}
