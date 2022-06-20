@@ -1,4 +1,4 @@
-import "./logIn.scss";
+import "./LogIn.scss";
 import React from "react";
 import { Card, Button, Form, Input } from "antd";
 const LogIn: React.FC = () => {
