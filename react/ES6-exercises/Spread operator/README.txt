@@ -1,0 +1,1 @@
+Build a function which takes two arrays as arguments and returns a new array which is the result of concatenating the two given arrays.

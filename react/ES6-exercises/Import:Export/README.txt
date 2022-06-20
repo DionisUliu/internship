@@ -1,0 +1,1 @@
+Create two files data.js and index.js. Export some data in data.js, import them in index.js and print the data to the console.

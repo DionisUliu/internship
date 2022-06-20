@@ -1,0 +1,1 @@
+Build a function to calculate the sum of any number of integers. Integers must be given as separate arguments.
