@@ -1,0 +1,14 @@
+.search-button {
+  border-color: #18bc51;
+  color: #18bc51;
+}
+
+.search-button:hover {
+  border-color: #18bc51;
+  color: white;
+  background-color: #18bc51;
+}
+
+.search-button:focus {
+  border-color: #18bc51;
+}
