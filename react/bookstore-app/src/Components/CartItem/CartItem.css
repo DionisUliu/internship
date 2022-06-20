@@ -1,0 +1,40 @@
+li {
+  list-style-type: none;
+  height: 100px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+li img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+.CartItem__item {
+  margin-top: 10px;
+}
+
+.currency__item {
+  position: static;
+  /* margin-left: 65%; */
+}
+
+.CartItem__button {
+  margin-left: auto;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: #d75353;
+}
+
+.CartItem__button:focus,
+.CartItem__button:active {
+  outline: none;
+}
+
+.Remove_button_price {
+  align-items: end;
+}
