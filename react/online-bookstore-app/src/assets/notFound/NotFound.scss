@@ -1,0 +1,11 @@
+.not-found-container {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  margin-top: 60px;
+  .not-found-code {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}

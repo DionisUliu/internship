@@ -6,32 +6,30 @@
 }
 
 .login-header {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  margin-top: 60px;
+}
+.login-logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  margin-bottom: -180px;
-
   .app-title {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 }
+
 .descripton-login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  margin-top: 170px;
-  margin-bottom: -140px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
   color: gray;
-  margin-left: 10px;
 }
+
 .login-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin-top: -480px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  margin-top: 60px;
 
   .fields-field-style {
     width: 330px;
@@ -43,6 +41,7 @@
       font-size: 15px;
     }
   }
+
   .login-form-button {
     width: 330px;
     height: 40px;

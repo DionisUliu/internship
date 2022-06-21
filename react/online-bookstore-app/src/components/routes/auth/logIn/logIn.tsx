@@ -16,6 +16,8 @@ import {
   TranslationOutlined,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
+import i18n from "../../../../services/translationServices/translationServices";
+
 const LogIn: React.FC = () => {
   const onFinish = (values: any) => {
     console.log("Success:", values);
@@ -25,22 +27,30 @@ const LogIn: React.FC = () => {
     console.log("Failed:", errorInfo);
   };
 
+  const enLanguageHandler = async () => {
+    await i18n.changeLanguage("en");
+  };
+
+  const sqLanguageHandler = async () => {
+    await i18n.changeLanguage("sq");
+  };
+
+  const { t } = useTranslation();
+
   const menu = (
     <Menu
       items={[
         {
-          label: <a href="https://www.antgroup.com">Englisht</a>,
+          label: <a onClick={enLanguageHandler}>{t("language.ENGLISH")}</a>,
           key: "en",
         },
         {
-          label: <a href="https://www.aliyun.com">Albania</a>,
+          label: <a onClick={sqLanguageHandler}>{t("language.ALBANIA")}</a>,
           key: "sq",
         },
       ]}
     />
   );
-
-  const { t } = useTranslation();
 
   return (
     <>
@@ -61,14 +71,12 @@ const LogIn: React.FC = () => {
         <div className="login-header">
           <div className="login-logo">
             <img src="../softup-logo.png" style={{ width: 100 }}></img>
-          </div>
-          <div className="app-title">
-            <h1>Softup Bookstore</h1>
+            <div className="app-title">
+              <h1>Softup Bookstore</h1>
+            </div>
           </div>
         </div>
-        <span className="descripton-login">
-          Welcome to our bookstore, try to login to use our services
-        </span>
+        <span className="descripton-login">{t("login.TITLE")}</span>
         <div className="login-container">
           <Form
             name="normal_login"
@@ -80,32 +88,32 @@ const LogIn: React.FC = () => {
               name="username"
               className="fields-field-style"
               rules={[
-                { required: true, message: "Please input your Username!" },
+                { required: true, message: `${t("error.USERNAME_ERROR")}` },
               ]}
             >
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 className="login-input-style"
-                placeholder="Username: admin or user"
+                placeholder={t("login.USERNAME_FIELD")}
               />
             </Form.Item>
             <Form.Item
               name="password"
               className="fields-field-style"
               rules={[
-                { required: true, message: "Please input your Password!" },
+                { required: true, message: `${t("error.PASSWORD_ERROR")}` },
               ]}
             >
               <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 className="login-input-style"
                 type="password"
-                placeholder="Password: softup.bookstore"
+                placeholder={t("login.PASSWORD_FIELD")}
               />
             </Form.Item>
             <Form.Item>
               <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
+                <Checkbox>{t("login.REMEMBER_ME")}</Checkbox>
               </Form.Item>
             </Form.Item>
 
@@ -115,7 +123,7 @@ const LogIn: React.FC = () => {
                 htmlType="submit"
                 className="login-form-button"
               >
-                {t("login.test")}
+                {t("login.LOGIN")}
               </Button>
             </Form.Item>
           </Form>
