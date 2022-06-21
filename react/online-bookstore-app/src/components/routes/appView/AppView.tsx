@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Menu, PageHeader } from "antd";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -28,15 +29,25 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("Dashboard", "1", <DashboardOutlined />),
+  getItem("Books", "1", <DashboardOutlined />),
   getItem("Settings", "2", <SettingOutlined />),
 ];
+
 const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+
+  const navigate = useNavigate();
+  const navigateToDashboard = () => {
+    navigate(`dashboard`);
+  };
+  const navigateToSettings = () => {
+    navigate(`settings`);
+  };
+
   return (
     <div className="appView-container">
       <PageHeader
@@ -52,6 +63,7 @@ const AppView: React.FC = () => {
           </Button>,
         ]}
       />
+
       <div className="menu-container">
         <Menu
           defaultSelectedKeys={["1"]}

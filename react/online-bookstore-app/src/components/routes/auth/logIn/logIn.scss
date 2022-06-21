@@ -1,12 +1,48 @@
+.login-wrapper {
+  background-image: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg);
+  background-repeat: no-repeat;
+  background-position: center 110px;
+  background-size: 100%;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-top: 130px;
+  margin-bottom: -180px;
+
+  .app-title {
+    margin-top: 10px;
+  }
+}
+.descripton-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-top: 170px;
+  margin-bottom: -140px;
+  color: gray;
+  margin-left: 10px;
+}
 .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50vh;
 
-  .login-form-wrapper {
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  .fields-field-style {
+    width: 330px;
+    font-size: 16px;
+    .login-input-style {
+      height: 40px;
+    }
+  }
+  .login-form-button {
+    width: 330px;
+    height: 40px;
+    font-size: 16px;
   }
 }

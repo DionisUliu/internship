@@ -1,6 +1,8 @@
 import "./LogIn.scss";
 import React from "react";
-import { Card, Button, Form, Input } from "antd";
+import { Button, Form, Input, Checkbox } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 const LogIn: React.FC = () => {
   const onFinish = (values: any) => {
     console.log("Success:", values);
@@ -10,45 +12,68 @@ const LogIn: React.FC = () => {
     console.log("Failed:", errorInfo);
   };
 
+  const { t } = useTranslation();
+
   return (
-    <div className="login-container">
-      <Card
-        size="small"
-        title="Login to Softup Bookstore"
-        className="login-form-wrapper"
-      >
+    <div className="login-wrapper">
+      <div className="login-header">
+        <div className="login-logo">
+          <img src="../softup-logo.png" style={{ width: 100 }}></img>
+        </div>
+        <div className="app-title">
+          <h1>Softup Bookstore</h1>
+        </div>
+      </div>
+      <span className="descripton-login">
+        Welcome to our bookstore, try to login to use our services
+      </span>
+      <div className="login-container">
         <Form
-          name="basic"
-          labelCol={{ span: 6 }}
-          wrapperCol={{ span: 16 }}
+          name="normal_login"
+          className="login-form"
           initialValues={{ remember: true }}
           onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
         >
           <Form.Item
-            label="Username"
             name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            className="fields-field-style"
+            rules={[{ required: true, message: "Please input your Username!" }]}
           >
-            <Input />
+            <Input
+              prefix={<UserOutlined className="site-form-item-icon" />}
+              className="login-input-style"
+              placeholder="Username"
+            />
           </Form.Item>
-
           <Form.Item
-            label="Password"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            className="fields-field-style"
+            rules={[{ required: true, message: "Please input your Password!" }]}
           >
-            <Input.Password />
+            <Input
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              className="login-input-style"
+              type="password"
+              placeholder="Password"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item>
           </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-              Login
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              {t("login.test")}
             </Button>
           </Form.Item>
         </Form>
-      </Card>
+      </div>
     </div>
   );
 };
