@@ -6,7 +6,7 @@ import {
   MenuFoldOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Button, Menu } from "antd";
+import { Button, Menu, PageHeader } from "antd";
 import React, { useState } from "react";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -29,7 +29,7 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem("Dashboard", "1", <DashboardOutlined />),
-  getItem("Option 2", "2", <SettingOutlined />),
+  getItem("Settings", "2", <SettingOutlined />),
 ];
 const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -38,22 +38,32 @@ const AppView: React.FC = () => {
     setCollapsed(!collapsed);
   };
   return (
-    <div style={{ width: 256 }}>
-      <Button
-        type="primary"
-        onClick={toggleCollapsed}
-        style={{ marginBottom: 16 }}
-      >
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
-      <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
-        mode="inline"
-        theme="dark"
-        inlineCollapsed={collapsed}
-        items={items}
+    <div className="appView-container">
+      <PageHeader
+        className="site-page-header"
+        title="Softup Bookstore"
+        avatar={{
+          src: "../softup-logo.png",
+          style: { width: 50 },
+        }}
+        extra={[
+          <Button key="1" type="primary">
+            Logout
+          </Button>,
+        ]}
       />
+      <div className="menu-container">
+        <Menu
+          defaultSelectedKeys={["1"]}
+          mode="inline"
+          theme="light"
+          inlineCollapsed={collapsed}
+          items={items}
+        />
+        <Button type="text" onClick={toggleCollapsed}>
+          {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        </Button>
+      </div>
     </div>
   );
 };
