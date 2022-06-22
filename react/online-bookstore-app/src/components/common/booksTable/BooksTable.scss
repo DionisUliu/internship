@@ -1,0 +1,10 @@
+.books-table-container {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  margin-top: 60px;
+  .books-search-bar {
+    position: relative;
+    width: 30%;
+  }
+}

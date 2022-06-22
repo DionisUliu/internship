@@ -1,6 +1,9 @@
 import { Space, Table, Tag } from "antd";
 import type { ColumnsType } from "antd/lib/table";
+import { Input } from "antd";
+import { DeleteOutlined, EditOutlined, MoreOutlined } from "@ant-design/icons";
 import React from "react";
+import "./BooksTable.scss";
 
 interface DataType {
   key: string;
@@ -18,19 +21,19 @@ const columns: ColumnsType<DataType> = [
     render: (text) => <a>{text}</a>,
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: "Author",
+    dataIndex: "author",
+    key: "author",
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
+    title: "Publication",
+    dataIndex: "publication",
+    key: "publication",
   },
   {
-    title: "Tags",
-    key: "tags",
-    dataIndex: "tags",
+    title: "Genre",
+    key: "genre",
+    dataIndex: "genre",
     render: (_, { tags }) => (
       <>
         {tags.map((tag) => {
@@ -52,9 +55,15 @@ const columns: ColumnsType<DataType> = [
     key: "action",
     render: (_, record) => (
       <Space size="middle">
-        <a>Details</a>
-        <a>Edit</a>
-        <a>Delete</a>
+        <a>
+          <MoreOutlined />
+        </a>
+        <a>
+          <EditOutlined />
+        </a>
+        <a>
+          <DeleteOutlined />
+        </a>
       </Space>
     ),
   },
@@ -63,7 +72,7 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
   {
     key: "1",
-    name: "John Brown",
+    name: "Te Mjeret",
     age: 32,
     address: "New York No. 1 Lake Park",
     tags: ["nice", "developer"],
@@ -84,7 +93,21 @@ const data: DataType[] = [
   },
 ];
 
+const { Search } = Input;
+
 const BooksTable: React.FC = () => {
-  return <Table columns={columns} dataSource={data} />;
+  return (
+    <div className="books-table-container">
+      <Search
+        className="books-search-bar"
+        placeholder="Search with name"
+        enterButton="Search"
+        size="large"
+        loading
+      />
+
+      <Table columns={columns} dataSource={data} />
+    </div>
+  );
 };
 export default BooksTable;

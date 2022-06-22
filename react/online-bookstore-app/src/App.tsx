@@ -2,6 +2,7 @@ import "./App.css";
 import LogIn from "./components/routes/auth/logIn/LogIn";
 import AppView from "./components/routes/appView/AppView";
 import NotFound from "./assets/notFound/NotFound";
+import Books from "./components/routes/books/Books";
 import "antd/dist/antd.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
@@ -24,7 +25,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route path="dashboard" element={<p>Hello Dashboard</p>} />
+            <Route path="books" element={<Books />} />
             <Route path="settings" element={<p>Hello Settings</p>} />
           </Route>
           <Route path="*" element={<NotFound />} />
