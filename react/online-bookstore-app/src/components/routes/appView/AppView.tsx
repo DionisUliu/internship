@@ -1,13 +1,12 @@
 import "./AppView.scss";
 import {
-  DashboardOutlined,
+  BookOutlined,
   SettingOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Menu, PageHeader } from "antd";
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -29,7 +28,7 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("Books", "1", <DashboardOutlined />),
+  getItem("Books", "1", <BookOutlined />),
   getItem("Settings", "2", <SettingOutlined />),
 ];
 
@@ -40,14 +39,6 @@ const AppView: React.FC = () => {
     setCollapsed(!collapsed);
   };
 
-  const navigate = useNavigate();
-  const navigateToDashboard = () => {
-    navigate(`dashboard`);
-  };
-  const navigateToSettings = () => {
-    navigate(`settings`);
-  };
-
   return (
     <div className="appView-container">
       <PageHeader
@@ -55,7 +46,7 @@ const AppView: React.FC = () => {
         title="Softup Bookstore"
         avatar={{
           src: "../softup-logo.png",
-          style: { width: 50 },
+          style: { width: 70 },
         }}
         extra={[
           <Button key="1" type="primary">

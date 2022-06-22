@@ -41,11 +41,21 @@ const LogIn: React.FC = () => {
     <Menu
       items={[
         {
-          label: <a onClick={enLanguageHandler}>{t("language.ENGLISH")}</a>,
+          label: (
+            <a onClick={enLanguageHandler}>
+              <img src="../united-kingdom.png" style={{ marginRight: 5 }}></img>
+              <b>{t("language.ENGLISH")}</b>
+            </a>
+          ),
           key: "en",
         },
         {
-          label: <a onClick={sqLanguageHandler}>{t("language.ALBANIA")}</a>,
+          label: (
+            <a onClick={sqLanguageHandler}>
+              <img src="../albania.png" style={{ marginRight: 5 }}></img>
+              <b>{t("language.ALBANIA")}</b>
+            </a>
+          ),
           key: "sq",
         },
       ]}
