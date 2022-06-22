@@ -5,7 +5,7 @@ type ProtectedRouteProps = {
 };
 const ProtectedRoute = (props: ProtectedRouteProps): ReactElement => {
   const user = null;
-  if (!user) {
+  if (user) {
     return <Navigate to="/auth/login" replace />;
   }
 
