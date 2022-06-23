@@ -1,62 +1,82 @@
+import React, { useState } from "react";
+import { Breadcrumb, Layout, Menu, PageHeader, Button } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  BookOutlined,
-  SettingOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
 import "./AppView.scss";
+import { Outlet } from "react-router-dom";
+import { Input } from "antd";
 
-const { Header, Sider, Content } = Layout;
+const { Content, Sider, Footer } = Layout;
 
 const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Layout>
-      <Sider theme="light" trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo" />
-
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <BookOutlined />,
-              label: "Books",
-            },
-            {
-              key: "2",
-              icon: <SettingOutlined />,
-              label: "Settings",
-            },
-          ]}
-        />
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(
+    <Layout className="site-page-header">
+      <PageHeader
+        title="Softup Bookstore"
+        extra={[
+          React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
               className: "trigger",
               onClick: () => setCollapsed(!collapsed),
             }
-          )}
-        </Header>
-        <Content
-          className="content-layout-background"
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 280,
-          }}
+          ),
+          <Button key="1" type="primary">
+            LogOut
+          </Button>,
+        ]}
+        avatar={{
+          src: "../softup-logo.png",
+        }}
+      />
+
+      <Layout>
+        <Sider
+          theme="light"
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          className="site-layout-background"
         >
-          <Outlet />
-        </Content>
+          <Menu
+            theme="light"
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            items={[
+              {
+                key: "1",
+                icon: <UserOutlined />,
+                label: "Books",
+              },
+              {
+                key: "2",
+                icon: <UserOutlined />,
+                label: "Settings",
+              },
+            ]}
+          />
+        </Sider>
+        <Layout style={{ padding: "0 24px 24px", height: "95vh" }}>
+          <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
+          <Content
+            className="site-layout-background"
+            style={{
+              padding: 24,
+              margin: 0,
+              minHeight: 280,
+            }}
+          >
+            <Outlet />
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            Created with ReactJS by Dionis Uliu
+          </Footer>
+        </Layout>
       </Layout>
     </Layout>
   );

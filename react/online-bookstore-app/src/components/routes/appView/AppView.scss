@@ -1,25 +1,19 @@
-.trigger {
-  padding: 0 24px;
-  font-size: 18px;
-  line-height: 64px;
-  cursor: pointer;
-  transition: color 0.3s;
+.site-layout-background {
+  background: #fff;
 }
 
-.trigger:hover {
-  color: #1890ff;
-}
+.site-page-header {
+  .ant-page-header-ghost {
+    background-color: #00162b;
+  }
+  .ant-page-header-heading-title {
+    color: white;
+  }
+  .trigger {
+    color: #fff;
+  }
 
-.logo {
-  height: 32px;
-  margin: 16px;
-  background: #00162b;
-}
-
-.site-layout .site-layout-background {
-  background: #00162b;
-}
-
-.content-layout-background {
-  background: white;
+  .books-search-bar {
+    width: 20%;
+  }
 }

@@ -1,6 +1,5 @@
-import { Space, Table, Tag } from "antd";
+import { Space, Table, Tag, Button, Input } from "antd";
 import type { ColumnsType } from "antd/lib/table";
-import { Input } from "antd";
 import { DeleteOutlined, EditOutlined, MoreOutlined } from "@ant-design/icons";
 import React from "react";
 import "./BooksTable.scss";
@@ -12,7 +11,6 @@ interface DataType {
   address: string;
   tags: string[];
 }
-
 const columns: ColumnsType<DataType> = [
   {
     title: "Name",
@@ -84,14 +82,18 @@ const { Search } = Input;
 const BooksTable: React.FC = () => {
   return (
     <div className="books-table-container">
-      <Search
-        className="books-search-bar"
-        placeholder="Search with name"
-        enterButton="Search"
-        size="large"
-        loading
-      />
-
+      <div className="button-and-search-container">
+        <Search
+          className="books-search-bar"
+          placeholder="Search with name"
+          enterButton="Search"
+          size="large"
+          loading
+        />
+        <Button className="add-book-button" type="primary">
+          Add Book
+        </Button>
+      </div>
       <Table
         className="table-books-style"
         columns={columns}

@@ -1,13 +1,14 @@
 .books-table-container {
-  display: grid;
-  grid-template: 1fr / 1fr;
-  place-items: center;
-  margin-top: 60px;
   width: 100%;
-  .table-books-style {
-    width: 100%;
+
+  .button-and-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
   .books-search-bar {
     width: 30%;
+    margin-bottom: 10px;
   }
 }
