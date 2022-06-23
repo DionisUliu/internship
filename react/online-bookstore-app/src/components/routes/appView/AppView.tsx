@@ -56,6 +56,9 @@ const AppView: React.FC = () => {
             theme="light"
             mode="inline"
             defaultSelectedKeys={["1"]}
+            onSelect={() => {
+              navigate("/app/books");
+            }}
             items={[
               {
                 key: "1",

@@ -1,21 +1,22 @@
 import { Space, Table, Tag, Button, Input } from "antd";
 import type { ColumnsType } from "antd/lib/table";
 import { DeleteOutlined, EditOutlined, MoreOutlined } from "@ant-design/icons";
-import React from "react";
+import React, { useState } from "react";
+import ModalBook from "../modalBook/ModalBook";
 import "./BooksTable.scss";
 
 interface DataType {
   key: string;
-  name: string;
-  age: number;
-  address: string;
-  tags: string[];
+  title: string;
+  author: string;
+  publication: string;
+  genre: string[];
 }
 const columns: ColumnsType<DataType> = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
+    title: "Title",
+    dataIndex: "title",
+    key: "title",
     render: (text) => <a>{text}</a>,
   },
   {
@@ -32,9 +33,9 @@ const columns: ColumnsType<DataType> = [
     title: "Genre",
     key: "genre",
     dataIndex: "genre",
-    render: (_, { tags }) => (
+    render: (_, { genre }) => (
       <>
-        {tags.map((tag) => {
+        {genre.map((tag) => {
           let color = tag.length > 5 ? "geekblue" : "green";
           if (tag === "loser") {
             color = "volcano";
@@ -70,16 +71,18 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
   {
     key: "1",
-    name: "Te Mjeret",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["roman", "drame"],
+    title: "Te Mjeret",
+    author: "Viktor Hygo",
+    publication: "New York No. 1 Lake Park",
+    genre: ["roman", "drame"],
   },
 ];
 
 const { Search } = Input;
 
 const BooksTable: React.FC = () => {
+  const [showModal, setshowModal] = useState(false);
+
   return (
     <div className="books-table-container">
       <div className="button-and-search-container">
@@ -90,8 +93,12 @@ const BooksTable: React.FC = () => {
           size="large"
           loading
         />
-        <Button className="add-book-button" type="primary">
-          Add Book
+        <Button
+          className="add-book-button"
+          type="primary"
+          onClick={() => setshowModal(true)}
+        >
+          Add new book
         </Button>
       </div>
       <Table
@@ -99,6 +106,7 @@ const BooksTable: React.FC = () => {
         columns={columns}
         dataSource={data}
       />
+      <ModalBook showModal={showModal} setshowModal={setshowModal} />
     </div>
   );
 };

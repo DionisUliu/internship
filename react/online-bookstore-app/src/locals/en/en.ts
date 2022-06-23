@@ -7,6 +7,11 @@ export default {
       REMEMBER_ME: "Remember me",
       LOGIN: "Login",
     },
+
+    bookForm: {
+      ADD_NEW_BOOK_BUTTON: "Add book",
+    },
+
     language: {
       ENGLISH: "English",
       ALBANIA: "Albania",
@@ -18,6 +23,12 @@ export default {
       PASSWORD_ERROR: "Please input your Password!",
       PASSWORD_MIN_CHAR_ERROR: "Minimum character 4",
       PASSWORD_MAX_CHAR_ERROR: "Maximum character 10",
+
+      BOOK_TITLE_ERROR: "Please input your book title!",
+      BOOK_AUTHOR_ERROR: "Please input your book author name!",
+      BOOK_PUBLICATION_ERROR: "Please pick your book publication date!",
+      BOOK_GENRE_ERROR: "Please select your book genre!",
+      BOOK_CHAR_ERROR: "Maximum character 50",
     },
   },
 };
