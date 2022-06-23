@@ -6,14 +6,19 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 import { Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../../redux/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const LogIn: React.FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
       .min(2, `${t("error.USERNAME_MIN_CHAR_ERROR")}`)
-      .max(20, `${t("verror.USERNAME_MAX_CHAR_ERROR")}`)
+      .max(50, `${t("error.USERNAME_MAX_CHAR_ERROR")}`)
       .required(`${t("error.USERNAME_ERROR")}`),
     password: Yup.string()
       .min(4, `${t("error.PASSWORD_MIN_CHAR_ERROR")}`)
@@ -44,7 +49,15 @@ const LogIn: React.FC = () => {
           }}
           validationSchema={LoginSchema}
           onSubmit={(values) => {
-            console.log("values", values);
+            dispatch(
+              loginUser(
+                {
+                  username: values.username,
+                  password: values.password,
+                },
+                navigate
+              ) as any
+            );
           }}
         >
           {({ errors, values }) => (

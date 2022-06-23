@@ -3,8 +3,11 @@
   grid-template: 1fr / 1fr;
   place-items: center;
   margin-top: 60px;
+  width: 100%;
+  .table-books-style {
+    width: 100%;
+  }
   .books-search-bar {
-    position: relative;
     width: 30%;
   }
 }

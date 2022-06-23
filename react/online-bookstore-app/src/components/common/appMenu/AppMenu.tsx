@@ -9,7 +9,6 @@ import {
 import { Button } from "antd";
 import { useState } from "react";
 import type { MenuProps } from "antd";
-import { Outlet } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -51,6 +50,7 @@ const AppMenu = () => {
           inlineCollapsed={collapsed}
           items={items}
         />
+        <div>Hello there</div>
 
         <Button
           style={{ color: "black" }}
@@ -60,7 +60,6 @@ const AppMenu = () => {
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>
-      <Outlet />
     </>
   );
 };

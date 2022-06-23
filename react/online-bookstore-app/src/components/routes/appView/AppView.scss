@@ -1,10 +1,25 @@
-.appView-container {
-  .site-page-header {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #00162b;
-    padding: 5px;
-  }
-  .ant-page-header-heading-title {
-    color: white;
-  }
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: #00162b;
+}
+
+.site-layout .site-layout-background {
+  background: #00162b;
+}
+
+.content-layout-background {
+  background: white;
 }
