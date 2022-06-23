@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./services/translationServices/translationServices";
 import ProtectedRoute from "./components/common/protectedRoutes/ProtectedRoutes";
+import Logout from "./components/common/logout/Logout";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/auth/login" />} />
           <Route path="/auth/login" element={<LogIn />} />
-
+          <Route path="/auth/logout" element={<Logout />} />
           <Route
             path="/app"
             element={

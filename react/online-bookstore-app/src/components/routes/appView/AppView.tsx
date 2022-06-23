@@ -3,16 +3,19 @@ import { Breadcrumb, Layout, Menu, PageHeader, Button } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UserOutlined,
+  BookOutlined,
+  SettingOutlined,
 } from "@ant-design/icons";
 import "./AppView.scss";
 import { Outlet } from "react-router-dom";
-import { Input } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const { Content, Sider, Footer } = Layout;
 
 const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <Layout className="site-page-header">
@@ -26,8 +29,14 @@ const AppView: React.FC = () => {
               onClick: () => setCollapsed(!collapsed),
             }
           ),
-          <Button key="1" type="primary">
-            LogOut
+          <Button
+            onClick={() => {
+              navigate("/auth/logout");
+            }}
+            key="1"
+            type="primary"
+          >
+            Logout
           </Button>,
         ]}
         avatar={{
@@ -50,12 +59,12 @@ const AppView: React.FC = () => {
             items={[
               {
                 key: "1",
-                icon: <UserOutlined />,
+                icon: <BookOutlined />,
                 label: "Books",
               },
               {
                 key: "2",
-                icon: <UserOutlined />,
+                icon: <SettingOutlined />,
                 label: "Settings",
               },
             ]}
