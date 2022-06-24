@@ -18,7 +18,7 @@ const BookForm = () => {
   };
 
   const BookFormSchema = Yup.object().shape({
-    name: Yup.string()
+    title: Yup.string()
       .max(50, `${t("error.BOOK_CHAR_ERROR")}`)
       .required(`${t("error.BOOK_TITLE_ERROR")}`),
     author: Yup.string()

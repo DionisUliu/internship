@@ -24,6 +24,7 @@ export const loginUser = (
   return async (dispatch: AppDispatch) => {
     try {
       const data = await login(user.username, user.password);
+
       const userData: IUser = {
         email: data.email,
         firstName: data.firstName,
@@ -31,6 +32,7 @@ export const loginUser = (
         isAdmin: data.isAdmin,
       };
       dispatch(addUser(userData));
+
       saveJwtToStorage(data.token);
       navigate("/app/books");
     } catch (error) {}

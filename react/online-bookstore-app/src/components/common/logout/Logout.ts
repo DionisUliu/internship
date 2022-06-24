@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { removeJwtFromStorage } from "../../../services/authService/authService";
+import { logout } from "../../../services/userService/userService";
 
 const Logout = () => {
   useEffect(() => {
-    removeJwtFromStorage();
+    logout();
     window.location.href = "/auth/login";
   });
   return null;
