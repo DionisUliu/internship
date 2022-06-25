@@ -9,6 +9,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./services/translationServices/translationServices";
 import ProtectedRoute from "./components/common/protectedRoutes/ProtectedRoutes";
 import Logout from "./components/common/logout/Logout";
+import BookDetails from "./components/common/booksDetails/BookDetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           >
             <Route path="books" element={<Books />} />
             <Route path="settings" element={<p>Hello Settings</p>} />
+            <Route path="book-details" element={<BookDetails />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

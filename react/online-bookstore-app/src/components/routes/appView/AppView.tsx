@@ -9,6 +9,7 @@ import {
 import "./AppView.scss";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import type { MenuProps } from "antd";
 
 const { Content, Sider, Footer } = Layout;
 
@@ -16,6 +17,14 @@ const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const navigate = useNavigate();
+
+  const onClick: MenuProps["onClick"] = (e) => {
+    if (e.key === "books") {
+      navigate("books");
+    } else if (e.key === "settings") {
+      navigate("settings");
+    }
+  };
 
   return (
     <Layout className="site-page-header">
@@ -56,17 +65,15 @@ const AppView: React.FC = () => {
             theme="light"
             mode="inline"
             defaultSelectedKeys={["1"]}
-            onSelect={() => {
-              navigate("/app/books");
-            }}
+            onClick={onClick}
             items={[
               {
-                key: "1",
+                key: "books",
                 icon: <BookOutlined />,
                 label: "Books",
               },
               {
-                key: "2",
+                key: "settings",
                 icon: <SettingOutlined />,
                 label: "Settings",
               },
@@ -81,6 +88,8 @@ const AppView: React.FC = () => {
               padding: 24,
               margin: 0,
               minHeight: 280,
+              overflow: "auto",
+              height: 300,
             }}
           >
             <Outlet />

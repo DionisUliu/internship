@@ -7,7 +7,7 @@ type ModalType = {
   setshowModal: (showModal: boolean) => void;
 };
 
-const ModalBook: React.FC<ModalType> = ({ showModal, setshowModal }) => {
+const BookModal: React.FC<ModalType> = ({ showModal, setshowModal }) => {
   return (
     <div className="modal_container">
       <Modal
@@ -16,15 +16,12 @@ const ModalBook: React.FC<ModalType> = ({ showModal, setshowModal }) => {
         onCancel={() => {
           setshowModal(false);
         }}
-        okText="Submit"
-        onOk={() => {
-          console.log("hello there");
-        }}
+        footer={null}
       >
-        <BookForm />
+        <BookForm setShowModal={setshowModal} />
       </Modal>
     </div>
   );
 };
 
-export default ModalBook;
+export default BookModal;

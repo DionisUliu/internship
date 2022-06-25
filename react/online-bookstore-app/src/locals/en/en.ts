@@ -1,5 +1,10 @@
 export default {
   translation: {
+    language: {
+      ENGLISH: "English",
+      ALBANIA: "Albania",
+    },
+
     login: {
       TITLE: "Welcome to our bookstore, try to login to use our services",
       USERNAME_FIELD: "Username: admin or user",
@@ -10,12 +15,15 @@ export default {
 
     bookForm: {
       ADD_NEW_BOOK_BUTTON: "Add book",
+      TITLE_BOOK_FORM: "Title",
+      AUTHOR_BOOK_FORM: "Author",
+      GENRE_BOOK_FORM: "Genre",
+      PUBLICATION_BOOK_FORM: "Publication",
+      PAGES_BOOKFORM: "Pages",
+
+      TITLE_FIELD_BOOK_FORM: "",
     },
 
-    language: {
-      ENGLISH: "English",
-      ALBANIA: "Albania",
-    },
     error: {
       USERNAME_ERROR: "Please input your Username!",
       USERNAME_MIN_CHAR_ERROR: "Minimum character 2",

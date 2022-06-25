@@ -8,17 +8,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../redux/store/store";
 import { useEffect, useState } from "react";
 import ModalBook from "../modalBook/ModalBook";
-import { fetchBooks } from "../../../redux/slices/bookSlice";
+import {
+  fetchBooksFromAPI,
+  SearchQueryFromAPI,
+  deleteBookFromAPI,
+} from "../../../redux/slices/bookSlice";
 const { Search } = Input;
 
 const BooksTable: React.FC = () => {
   const [showModal, setshowModal] = useState(false);
-  const books = useSelector((state: RootState) => state.books.booksData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBooks() as any);
+    dispatch(fetchBooksFromAPI() as any);
   }, [dispatch]);
+
+  const onSearch = (searchQuery: string) =>
+    dispatch(SearchQueryFromAPI(searchQuery));
+
+  let books: IBook[] = useSelector((state: RootState) => state.books.booksData);
+  const searchQuery = useSelector(
+    (state: RootState) => state.books.searchQuery
+  );
+  if (searchQuery) {
+    books = books.filter((book) => book.title === searchQuery);
+  }
 
   const columns: ColumnsType<IBook> = [
     {
@@ -51,11 +65,13 @@ const BooksTable: React.FC = () => {
             <MoreOutlined />
           </Link>
           <Link to={""}>
-            <EditOutlined />
+            <div>
+              <EditOutlined />
+            </div>
           </Link>
-          <Link to={""}>
+          <div onClick={() => dispatch(deleteBookFromAPI(record.title))}>
             <DeleteOutlined />
-          </Link>
+          </div>
         </Space>
       ),
     },
@@ -69,6 +85,7 @@ const BooksTable: React.FC = () => {
           placeholder="Search by name"
           enterButton="Search"
           size="large"
+          onSearch={onSearch}
           // loading
         />
         <Button
