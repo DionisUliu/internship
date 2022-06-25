@@ -80,24 +80,8 @@ const AppView: React.FC = () => {
             ]}
           />
         </Sider>
-        <Layout style={{ padding: "0 24px 24px", height: "95vh" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              overflow: "auto",
-              height: 300,
-            }}
-          >
-            <Outlet />
-          </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Created with ReactJS by Dionis Uliu
-          </Footer>
-        </Layout>
+
+        <Outlet />
       </Layout>
     </Layout>
   );

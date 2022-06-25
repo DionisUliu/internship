@@ -1,4 +1,4 @@
-import { Space, Table, Button, Input } from "antd";
+import { Space, Table, Button, Input, Layout } from "antd";
 import type { ColumnsType } from "antd/lib/table";
 import { DeleteOutlined, EditOutlined, MoreOutlined } from "@ant-design/icons";
 import "./BooksTable.scss";
@@ -14,10 +14,15 @@ import {
   deleteBookFromAPI,
 } from "../../../redux/slices/bookSlice";
 const { Search } = Input;
+const { Content, Footer } = Layout;
 
 const BooksTable: React.FC = () => {
   const [showModal, setshowModal] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooksFromAPI() as any);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchBooksFromAPI() as any);
@@ -78,31 +83,49 @@ const BooksTable: React.FC = () => {
   ];
 
   return (
-    <div className="books-table-container">
-      <div className="button-and-search-container">
-        <Search
-          className="books-search-bar"
-          placeholder="Search by name"
-          enterButton="Search"
-          size="large"
-          onSearch={onSearch}
-          // loading
-        />
-        <Button
-          className="add-book-button"
-          type="primary"
-          onClick={() => setshowModal(true)}
+    <>
+      <Layout style={{ padding: "24px 24px 24px", height: "95vh" }}>
+        <Content
+          className="site-layout-background"
+          style={{
+            padding: 24,
+            margin: 0,
+            minHeight: 280,
+            overflow: "auto",
+            height: 300,
+          }}
         >
-          Add new Book
-        </Button>
-      </div>
-      <Table
-        className="table-books-style"
-        columns={columns}
-        dataSource={books}
-      />
-      <ModalBook showModal={showModal} setshowModal={setshowModal} />
-    </div>
+          <div className="books-table-container">
+            <div className="button-and-search-container">
+              <Search
+                className="books-search-bar"
+                placeholder="Search by name"
+                enterButton="Search"
+                size="large"
+                onSearch={onSearch}
+                // loading
+              />
+              <Button
+                className="add-book-button"
+                type="primary"
+                onClick={() => setshowModal(true)}
+              >
+                Add new Book
+              </Button>
+            </div>
+            <Table
+              className="table-books-style"
+              columns={columns}
+              dataSource={books}
+            />
+            <ModalBook showModal={showModal} setshowModal={setshowModal} />
+          </div>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          Created with ReactJS by Dionis Uliu
+        </Footer>
+      </Layout>
+    </>
   );
 };
 export default BooksTable;
