@@ -6,7 +6,8 @@ interface DescriptionItemProps {
   content: React.ReactNode;
 }
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
+
 const DescriptionItem = ({ title, content }: DescriptionItemProps) => (
   <div className="site-description-item-profile-wrapper">
     <p className="site-description-item-profile-p-label">{title}:</p>

@@ -30,14 +30,12 @@ const AppView: React.FC = () => {
     <Layout className="site-page-header">
       <PageHeader
         title="Softup Bookstore"
+        subTitle={[
+          <div onClick={() => setCollapsed(!collapsed)} className="trigger">
+            {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          </div>,
+        ]}
         extra={[
-          React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          ),
           <Button
             onClick={() => {
               navigate("/auth/logout");

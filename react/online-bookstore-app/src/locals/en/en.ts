@@ -2,7 +2,7 @@ export default {
   translation: {
     language: {
       ENGLISH: "English",
-      ALBANIA: "Albania",
+      ALBANIA: "Albanian",
     },
 
     login: {

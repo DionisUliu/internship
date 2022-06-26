@@ -1,7 +1,7 @@
 import "./LoginForm.scss";
 import React from "react";
-import { Checkbox } from "antd";
-import { Form, Input, SubmitButton } from "formik-antd";
+import { Checkbox, Button } from "antd";
+import { Form, Input } from "formik-antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -111,13 +111,13 @@ const LogIn: React.FC = () => {
               </Form.Item>
 
               <Form.Item name="fields-field-style">
-                <SubmitButton
+                <Button
                   type="primary"
                   htmlType="submit"
                   className="login-form-button"
                 >
                   {t("login.LOGIN")}
-                </SubmitButton>
+                </Button>
               </Form.Item>
             </Form>
           )}
