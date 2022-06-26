@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
   const navigateToDashboard = () => {
-    navigate(`/app`);
+    navigate(`/app/books`);
   };
   return (
     <div className="not-found-container">

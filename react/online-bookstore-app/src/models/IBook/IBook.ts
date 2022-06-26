@@ -3,8 +3,11 @@ export interface IBook {
   key?: string;
   title: string;
   author: string;
-  publication?: [{ date: string; _id: string }] | string[];
-  publications: string[];
+  publications:
+    | string[]
+    | [{ date: string | Date; _id?: string }]
+    | string[]
+    | string;
   genre: string;
   photos?: {};
   pages: number;

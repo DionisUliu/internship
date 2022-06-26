@@ -2,6 +2,7 @@ import http from "../httpService/httpService";
 import config from "../../config.json";
 import { IBook } from "../../models/IBook/IBook";
 import { getToken } from "../authService/authService";
+
 const getBooks = async () => {
   const { data } = await http.get(`${config.apiUrl}/books`, {
     headers: {
@@ -21,11 +22,17 @@ const postBook = async (book: IBook) => {
 };
 
 const updateBook = async (book: IBook) => {
-  const { data } = await http.put(`${config.apiUrl}/books`, book, {
-    headers: {
-      Authorization: "Bearer " + getToken(),
-    },
-  });
+  const updatedBook = { ...book };
+  delete updatedBook._id;
+  const { data } = await http.patch(
+    `${config.apiUrl}/books/${book._id}`,
+    updatedBook,
+    {
+      headers: {
+        Authorization: "Bearer " + getToken(),
+      },
+    }
+  );
   return data;
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Breadcrumb, Layout, Menu, PageHeader, Button } from "antd";
+import { Layout, Menu, PageHeader, Button } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -10,11 +10,13 @@ import "./AppView.scss";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import type { MenuProps } from "antd";
+import { useTranslation } from "react-i18next";
 
-const { Content, Sider, Footer } = Layout;
+const { Sider } = Layout;
 
 const AppView: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -43,7 +45,7 @@ const AppView: React.FC = () => {
             key="1"
             type="primary"
           >
-            Logout
+            {t("appView.LOGOUT_BUTTON")}
           </Button>,
         ]}
         avatar={{
@@ -68,12 +70,12 @@ const AppView: React.FC = () => {
               {
                 key: "books",
                 icon: <BookOutlined />,
-                label: "Books",
+                label: `${t("appView.BOOKS")}`,
               },
               {
                 key: "settings",
                 icon: <SettingOutlined />,
-                label: "Settings",
+                label: `${t("appView.SETTINGS")}`,
               },
             ]}
           />

@@ -1,5 +1,10 @@
 export default {
   translation: {
+    language: {
+      ENGLISH: "Anglisht",
+      ALBANIA: "Shqip",
+    },
+
     login: {
       LOGIN: "Identifikohu",
       TITLE: "Mirë se vini në librarinë tonë, provoni të identifikoheni",
@@ -8,14 +13,57 @@ export default {
       REMEMBER_ME: "Më kujto",
     },
 
-    bookForm: {
-      ADD_NEW_BOOK_BUTTON: "Shto librin",
+    appView: {
+      LOGOUT_BUTTON: "Dilni",
+      BOOKS: "Librat",
+      SETTINGS: "Cilësimet",
     },
 
-    language: {
-      ENGLISH: "Anglisht",
-      ALBANIA: "Shqip",
+    bookTable: {
+      TITLE: "Titulli",
+      PUBLICATION: "Publikimi",
+      PAGES: "Faqe",
+      GENRE: "Zhaneri",
+      ACTION: "Veprime",
+      DELETE_CONFRIM: "Je i sigurt që dëshiron ta fshish këtë libër?",
+      SEARCH_BUTTON: "Kërko",
+      SEARCH_FIELD_PLACEHOLDER: "Kërko me titull...",
+      YES: "PO",
+      NO: "JO",
+      ADD_NEW_BOOK_BUTTON: "Shto një libër",
     },
+
+    genres: {
+      FICTION: "Trillim",
+      MYSTERY: "Mister",
+      THRILLER: "Krim",
+      HISTORICAL: "Histori",
+      ROMANCE: "Romanc",
+      FANTASY: "Fantazi",
+    },
+
+    bookForm: {
+      TITLE_BOOK_FORM: "Titulli",
+      TITLE_PLACEHOLDER: "Rreth botes",
+
+      AUTHOR_BOOK_FORM: "Autori",
+      AUTHOR_PLACEHOLDER: "Jules Verne",
+
+      GENRE_BOOK_FORM: "Zhaneri",
+      GENRE_PLACEHOLDER: "FICTION",
+
+      PUBLICATION_BOOK_FORM: "Publikimi",
+      PAGES_BOOKFORM: "Faqer",
+      TITLE_FIELD_BOOK_FORM: "Shto një libër të ri",
+      ADD_BUTTON: "Shto librin",
+      CANCEL_BUTTON: "Anullo",
+    },
+
+    settings: {
+      SETTINGS: "Cilësimet",
+      CHANGE_LANGUAGE: "Ndrysho gjuhën",
+    },
+
     error: {
       USERNAME_ERROR: "Ju lutemi vendosni emrin tuaj të përdoruesit!",
       USERNAME_MIN_CHAR_ERROR: "Minimumi i karaktereve është 2",

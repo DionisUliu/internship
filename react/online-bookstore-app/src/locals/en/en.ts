@@ -13,15 +13,59 @@ export default {
       LOGIN: "Login",
     },
 
-    bookForm: {
-      ADD_NEW_BOOK_BUTTON: "Add book",
-      TITLE_BOOK_FORM: "Title",
-      AUTHOR_BOOK_FORM: "Author",
-      GENRE_BOOK_FORM: "Genre",
-      PUBLICATION_BOOK_FORM: "Publication",
-      PAGES_BOOKFORM: "Pages",
+    appView: {
+      LOGOUT_BUTTON: "Logout",
+      BOOKS: "Books",
+      SETTINGS: "Settings",
+    },
 
-      TITLE_FIELD_BOOK_FORM: "",
+    bookTable: {
+      TITLE: "Title",
+      PUBLICATION: "Publication",
+      PAGES: "Pages",
+      GENRE: "Genre",
+      ACTION: "Action",
+      DELETE_CONFRIM: "Are you sure to delete this book?",
+      SEARCH_BUTTON: "Search",
+      SEARCH_FIELD_PLACEHOLDER: "Search with title...",
+      YES: "YES",
+      NO: "NO",
+      ADD_NEW_BOOK_BUTTON: "Add a book",
+    },
+
+    genres: {
+      FICTION: "Fiction",
+      MYSTERY: "Mystery",
+      THRILLER: "Thriller",
+      HISTORICAL: "Historical",
+      ROMANCE: "Romance",
+      FANTASY: "Fantasy",
+    },
+
+    bookForm: {
+      TITLE_BOOK_FORM: "Title",
+      TITLE_PLACEHOLDER: "Around The World",
+
+      AUTHOR_BOOK_FORM: "Author",
+      AUTHOR_PLACEHOLDER: "Jules Verne",
+
+      GENRE_BOOK_FORM: "Genre",
+      GENRE_PLACEHOLDER: "FICTION",
+
+      PUBLICATION_BOOK_FORM: "Publication",
+
+      PAGES_BOOK_FORM: "Pages",
+      PAGES_PLACEHOLDER: "1",
+
+      TITLE_FIELD_BOOK_FORM: "Add new book",
+
+      ADD_BUTTON: "Add book",
+      CANCEL_BUTTON: "Cancel",
+    },
+
+    settings: {
+      SETTINGS: "Settings",
+      CHANGE_LANGUAGE: "Change language",
     },
 
     error: {

@@ -1,6 +1,6 @@
 import "./Settings.scss";
 import { Layout } from "antd";
-import { Dropdown, Menu, Space, Select } from "antd";
+import { Select } from "antd";
 import i18n from "../../../services/translationServices/translationServices";
 import { useTranslation } from "react-i18next";
 
@@ -9,6 +9,7 @@ const { Option } = Select;
 
 const Settings = () => {
   const { t } = useTranslation();
+
   const enLanguageHandler = async () => {
     await i18n.changeLanguage("en");
   };
@@ -17,30 +18,30 @@ const Settings = () => {
     await i18n.changeLanguage("sq");
   };
 
-  const menu = (
-    <Menu
-      items={[
-        {
-          label: (
-            <a onClick={enLanguageHandler}>
-              <img src="../united-kingdom.png" style={{ marginRight: 5 }}></img>
-              <b>{t("language.ENGLISH")}</b>
-            </a>
-          ),
-          key: "en",
-        },
-        {
-          label: (
-            <a onClick={sqLanguageHandler}>
-              <img src="../albania.png" style={{ marginRight: 5 }}></img>
-              <b>{t("language.ALBANIA")}</b>
-            </a>
-          ),
-          key: "sq",
-        },
-      ]}
-    />
-  );
+  // const menu = (
+  //   <Menu
+  //     items={[
+  //       {
+  //         label: (
+  //           <a onClick={enLanguageHandler}>
+  //             <img src="../united-kingdom.png" style={{ marginRight: 5 }}></img>
+  //             <b>{t("language.ENGLISH")}</b>
+  //           </a>
+  //         ),
+  //         key: "en",
+  //       },
+  //       {
+  //         label: (
+  //           <a onClick={sqLanguageHandler}>
+  //             <img src="../albania.png" style={{ marginRight: 5 }}></img>
+  //             <b>{t("language.ALBANIA")}</b>
+  //           </a>
+  //         ),
+  //         key: "sq",
+  //       },
+  //     ]}
+  //   />
+  // );
 
   return (
     <>
@@ -58,7 +59,7 @@ const Settings = () => {
             className="site-description-item-profile-p"
             style={{ marginBottom: 24, fontSize: 30 }}
           >
-            Settings
+            {t("settings.SETTINGS")}
           </p>
         </Content>
         <Content
@@ -73,17 +74,20 @@ const Settings = () => {
             className="site-description-item-profile-p"
             style={{ marginBottom: 24, fontSize: 20 }}
           >
-            Change language
+            {t("settings.CHANGE_LANGUAGE")}
           </p>
-
-          <Select defaultValue="Englisht" style={{ width: "20%" }}>
-            <Option value="Englisht">
-              <img src="../united-kingdom.png" style={{ marginRight: 5 }}></img>
-              <b>{t("language.ENGLISH")}</b>
+          <Select
+            defaultValue={t("language.ENGLISH")}
+            style={{ width: 200 }}
+            onChange={sqLanguageHandler}
+          >
+            <Option value={t("language.ENGLISH")}>
+              <img src="../united-kingdom.png" style={{ marginRight: 5 }} />
+              {t("language.ENGLISH")}
             </Option>
-            <Option value="Albanian">
-              <img src="../albania.png" style={{ marginRight: 5 }}></img>
-              <b>{t("language.ALBANIA")}</b>
+            <Option value={t("language.ALBANIA")}>
+              <img src="../albania.png" style={{ marginRight: 5 }} />
+              {t("language.ALBANIA")}
             </Option>
           </Select>
         </Content>

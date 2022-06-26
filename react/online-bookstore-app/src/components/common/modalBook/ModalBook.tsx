@@ -1,5 +1,6 @@
 import { Modal } from "antd";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import BookForm from "../bookForm/BookForm";
 
 type ModalType = {
@@ -8,10 +9,11 @@ type ModalType = {
 };
 
 const BookModal: React.FC<ModalType> = ({ showModal, setshowModal }) => {
+  const { t } = useTranslation();
   return (
     <div className="modal_container">
       <Modal
-        title="Add new book"
+        title={t("bookForm.TITLE_FIELD_BOOK_FORM")}
         visible={showModal}
         onCancel={() => {
           setshowModal(false);
