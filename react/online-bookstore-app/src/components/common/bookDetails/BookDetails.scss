@@ -1,16 +1,16 @@
-.site-description-item-profile-wrapper {
+.descriptionItem {
   margin-bottom: 7px;
   color: rgba(0, 0, 0, 0.65);
   font-size: 14px;
   line-height: 1.5715;
 }
 
-[data-theme="compact"] .site-description-item-profile-wrapper {
+[data-theme="compact"] .descriptionItem {
   font-size: 12px;
   line-height: 1.66667;
 }
 
-.ant-drawer-body p.site-description-item-profile-p {
+.ant-drawer-body p.descriptionItemParagraph {
   display: block;
   margin-bottom: 16px;
   color: rgba(0, 0, 0, 0.85);
@@ -18,13 +18,22 @@
   line-height: 1.5715;
 }
 
-[data-theme="compact"] .ant-drawer-body p.site-description-item-profile-p {
+[data-theme="compact"] .ant-drawer-body p.descriptionItemParagraph {
   font-size: 14px;
   line-height: 1.66667;
 }
 
-.site-description-item-profile-p-label {
+.descriptionItemParagraph {
   display: inline-block;
   margin-right: 8px;
   color: rgba(0, 0, 0, 0.85);
+}
+.layout {
+  padding: 24px 24px 24px;
+  height: 100vh;
+}
+.content {
+  padding: 24;
+  margin: 0;
+  max-height: 50vh;
 }

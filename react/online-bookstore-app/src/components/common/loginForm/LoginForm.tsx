@@ -11,9 +11,11 @@ import { loginUser } from "../../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const LogIn: React.FC = () => {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const LoginSchema = Yup.object().shape({
     username: Yup.string()

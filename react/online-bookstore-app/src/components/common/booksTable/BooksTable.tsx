@@ -69,7 +69,7 @@ const BooksTable: React.FC = () => {
       title: t("bookTable.TITLE"),
       dataIndex: "title",
       key: "name",
-      render: (text: string) => <Link to="title">{text}</Link>,
+      render: (text: string) => <div>{text}</div>,
     },
     {
       title: t("bookTable.PUBLICATION"),
@@ -111,7 +111,7 @@ const BooksTable: React.FC = () => {
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Link to={`:${record.title}`}>
+          <Link to={`book-details/${record._id}`}>
             <MoreOutlined />
           </Link>
           <Link to="">
@@ -119,7 +119,7 @@ const BooksTable: React.FC = () => {
               <EditOutlined />
             </div>
           </Link>
-          <Link to={""}>
+          <Link to="">
             <Popconfirm
               title={t("bookTable.DELETE_CONFRIM")}
               onConfirm={() => onConfirm(record)}

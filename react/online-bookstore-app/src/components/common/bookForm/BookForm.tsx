@@ -57,17 +57,11 @@ const BookForm: React.FC<BookFormType> = ({ setShowModal }) => {
   };
 
   const BookFormSchema = Yup.object().shape({
-    title: Yup.string()
-      .max(5, `${t("bookForm.error.titleMax")}`)
-      .required(`${t("bookForm.error.titleReq")}`),
-    author: Yup.string()
-      .max(20, `${t("bookForm.error.authorMax")}`)
-      .required(`${t("bookForm.error.authorReq")}`),
-    publication: Yup.string().required(`${t("bookForm.error.publication")}`),
-    genre: Yup.string().required(`${t("bookForm.error.genre")}`),
-    pages: Yup.number()
-      .required(`${t("bookForm.error.pages")}`)
-      .min(5, `${t("bookForm.error.pagesMin")}`),
+    title: Yup.string().required(`${t("error.BOOK_TITLE_ERROR")}`),
+    author: Yup.string().required(`${t("error.BOOK_AUTHOR_ERROR")}`),
+    publication: Yup.string().required(`${t("error.BOOK_PUBLICATION_ERROR")}`),
+    genre: Yup.string().required(`${t("error.BOOK_GENRE_ERROR")}`),
+    pages: Yup.number().required(`${t("error.BOOK_PAGES_ERROR")}`),
   });
 
   return (

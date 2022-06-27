@@ -13,11 +13,13 @@ const BookModal: React.FC<ModalType> = ({ showModal, setshowModal }) => {
   return (
     <div className="modal_container">
       <Modal
+        className="modal-style"
         title={t("bookForm.TITLE_FIELD_BOOK_FORM")}
         visible={showModal}
         onCancel={() => {
           setshowModal(false);
         }}
+        destroyOnClose={true}
         footer={null}
       >
         <BookForm setShowModal={setshowModal} />

@@ -10,14 +10,9 @@ const { Option } = Select;
 const Settings = () => {
   const { t } = useTranslation();
 
-  const enLanguageHandler = async () => {
-    await i18n.changeLanguage("en");
+  const languageHandler = async (language: string) => {
+    await i18n.changeLanguage(language);
   };
-
-  const sqLanguageHandler = async () => {
-    await i18n.changeLanguage("sq");
-  };
-
   // const menu = (
   //   <Menu
   //     items={[
@@ -76,18 +71,30 @@ const Settings = () => {
           >
             {t("settings.CHANGE_LANGUAGE")}
           </p>
-          <Select
-            defaultValue={t("language.ENGLISH")}
-            style={{ width: 200 }}
-            onChange={sqLanguageHandler}
-          >
+          <Select defaultValue={t("language.ENGLISH")} style={{ width: 250 }}>
             <Option value={t("language.ENGLISH")}>
-              <img src="../united-kingdom.png" style={{ marginRight: 5 }} />
-              {t("language.ENGLISH")}
+              <div
+                onClick={() => {
+                  languageHandler("en");
+                }}
+              >
+                <img
+                  src="../united-kingdom.png"
+                  style={{ marginRight: 5 }}
+                  alt=""
+                />
+                <b>{t("language.ENGLISH")}</b>
+              </div>
             </Option>
             <Option value={t("language.ALBANIA")}>
-              <img src="../albania.png" style={{ marginRight: 5 }} />
-              {t("language.ALBANIA")}
+              <div
+                onClick={() => {
+                  languageHandler("sq");
+                }}
+              >
+                <img src="../albania.png" style={{ marginRight: 5 }} alt="" />
+                <b>{t("language.ALBANIA")}</b>
+              </div>
             </Option>
           </Select>
         </Content>

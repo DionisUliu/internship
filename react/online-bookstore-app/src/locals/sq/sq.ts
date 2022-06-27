@@ -33,6 +33,17 @@ export default {
       ADD_NEW_BOOK_BUTTON: "Shto një libër",
     },
 
+    bookDetails: {
+      MAIN_TITLE: "Detajet e librit",
+      DETAILS_TITLE: "Titulli",
+      DETAILS_AUTHOR: "Autori",
+      DETAILS_GENRE: "Zhaneri",
+
+      DETAILS_PUBLICATION: "Publikimi",
+
+      DETAILS_PAGES: "Faqe",
+    },
+
     genres: {
       FICTION: "Trillim",
       MYSTERY: "Mister",
@@ -77,6 +88,7 @@ export default {
       BOOK_PUBLICATION_ERROR:
         "Ju lutemi zgjidhni datën e publikimit të librit!",
       BOOK_GENRE_ERROR: "Ju lutemi zgjidhni zhanerin e librit tuaj!",
+      BOOK_PAGES_ERROR: "Ju lutemi shkruani numrin e faqeve!",
       BOOK_CHAR_ERROR: "Maksimumi i karaktereve është 50",
     },
   },

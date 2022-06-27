@@ -33,6 +33,17 @@ export default {
       ADD_NEW_BOOK_BUTTON: "Add a book",
     },
 
+    bookDetails: {
+      MAIN_TITLE: "Book details",
+      DETAILS_TITLE: "Title",
+      DETAILS_AUTHOR: "Author",
+      DETAILS_GENRE: "Genre",
+
+      DETAILS_PUBLICATION: "Publication",
+
+      DETAILS_PAGES: "Pages",
+    },
+
     genres: {
       FICTION: "Fiction",
       MYSTERY: "Mystery",
@@ -80,6 +91,7 @@ export default {
       BOOK_AUTHOR_ERROR: "Please input your book author name!",
       BOOK_PUBLICATION_ERROR: "Please pick your book publication date!",
       BOOK_GENRE_ERROR: "Please select your book genre!",
+      BOOK_PAGES_ERROR: "Please input the number of pages!",
       BOOK_CHAR_ERROR: "Maximum character 50",
     },
   },
